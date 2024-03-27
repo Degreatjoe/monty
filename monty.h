@@ -48,5 +48,6 @@ void parse_line(char *line, char **opcode, char **arg);
 void pint(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int line_number);
 void sub(stack_t **stack, unsigned int line_number);
+void divint(stack_t **stack, unsigned int line_number);
 
 #endif
