@@ -9,6 +9,7 @@
 void push(stack_t **stack, unsigned int line_number, char *arg)
 {
 	int n;
+	char *endptr;
 	stack_t *new_node;
 
 	/* Check if argument exists */
@@ -18,8 +19,15 @@ void push(stack_t **stack, unsigned int line_number, char *arg)
 		exit(EXIT_FAILURE);
 	}
 
-	/* Convert string to int using atoi */
-	n = atoi(arg);
+	/* Convert string to int using strtol */
+	n = strtol(arg, &endptr, 10);
+
+	/* Check if the entire string was converted to an integer */
+	if (*endptr != '\0')
+	{
+		fprintf(stderr, "L%d: usage: push integer\n", line_number);
+		exit(EXIT_FAILURE);
+	}
 
 	/* Allocate node */
 	new_node = malloc(sizeof(stack_t));
