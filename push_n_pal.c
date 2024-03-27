@@ -18,27 +18,22 @@ void push(stack_t **stack, unsigned int line_number, char *arg)
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
 	}
-
 	/* Convert string to int using strtol */
 	n = strtol(arg, &endptr, 10);
-
 	/* Check if the entire string was converted to an integer */
 	if (*endptr != '\0')
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
 	}
-
 	/* Allocate node */
 	new_node = malloc(sizeof(stack_t));
-
 	/* Check if malloc failed */
 	if (new_node == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
-
 	/* Put in the data */
 	new_node->n = n;
 
@@ -56,7 +51,6 @@ void push(stack_t **stack, unsigned int line_number, char *arg)
 /**
  * pall - The opcode pall prints all the values on the stack.
  * @stack: the stack.
- * @line_number: the number of lines.
  */
 /* Implement the 'pall' opcode */
 void pall(stack_t **stack)
