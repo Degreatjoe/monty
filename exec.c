@@ -22,6 +22,10 @@ void execute_opcode(char *opcode, stack_t **stack,
 	{
 		pint(stack, line_number);
 	}
+	else if (strcmp(opcode, "mul") == 0)
+	{
+		mul(stack, line_number);
+	}
 	else if (strcmp(opcode, "pop") == 0)
 	{
 		pop(stack, line_number);
