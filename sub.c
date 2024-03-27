@@ -1,5 +1,10 @@
 #include "monty.h"
-
+/**
+ * sub - The opcode sub subtracts the top element of the stack,
+ * from the second top element of the stack.
+ * @stack: the stack.
+ * @line_number: the number of line.
+ */
 void sub(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp;
