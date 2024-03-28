@@ -42,6 +42,10 @@ void execute_opcode(char *opcode, stack_t **stack,
 	{
 		add(stack, line_number);
 	}
+	else if (strcmp(opcode, "nop") == 0)
+	{
+		return;
+	}
 	else
 	{
 		fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
