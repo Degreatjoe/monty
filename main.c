@@ -32,6 +32,7 @@ int main(int argc, char **argv)
 	while ((read = getline(&line, &len, file)) != -1)
 	{
 		line_number++;
+		line = trim(line);
 		parse_line(line, &opcode, &arg);
 		/* Execute the opcode */
 		execute_opcode(opcode, &stack, line_number, arg);

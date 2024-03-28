@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <sys/types.h>
+#include <ctype.h>
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -50,5 +51,6 @@ void pop(stack_t **stack, unsigned int line_number);
 void sub(stack_t **stack, unsigned int line_number);
 void divint(stack_t **stack, unsigned int line_number);
 void mul(stack_t **stack, unsigned int line_number);
+char *trim(char *str);
 
 #endif
