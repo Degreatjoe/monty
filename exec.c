@@ -38,6 +38,10 @@ void execute_opcode(char *opcode, stack_t **stack,
 	{
 		divint(stack, line_number);
 	}
+	else if (strcmp(opcode, "add") == 0)
+	{
+		add(stack, line_number);
+	}
 	else
 	{
 		fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
