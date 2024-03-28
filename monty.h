@@ -53,4 +53,6 @@ void divint(stack_t **stack, unsigned int line_number);
 void mul(stack_t **stack, unsigned int line_number);
 char *trim(char *str);
 void add(stack_t **stack, unsigned int line_number);
+void free_monty(stack_t **head);
+
 #endif
